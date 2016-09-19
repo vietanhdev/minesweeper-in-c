@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+#define clear() printf("\033[H\033[J")
+
+//color
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_BLUE    "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
+char print_info(int line){
+  switch (line) {
+    case 0: printf(ANSI_COLOR_GREEN  "MINESWEEPER TERMINAL VERSION" ANSI_COLOR_RESET); break;
+    case 1: printf(ANSI_COLOR_YELLOW "         Coded by VietAnhDev" ANSI_COLOR_RESET); break;
+    case 2: printf(ANSI_COLOR_YELLOW "     Website: vietanhdev.com" ANSI_COLOR_RESET); break;  
+    default:
+      break;
+  }
+}
+
+
+/*char get_p_char(int i, int j){
+  switch (p[i][j]) {
+    case 0 : return '0';
+  }
+  }*/
+
+
+
+void print_board(int linum, int *p[][20]){
+  int i,j;
+  clear();
+  printf("\n");
+  for (i = 0; i < linum; i++) {
+     printf("  ");
+     for (j = 0; j < linum; j++) {
+       printf("%c ", p[][20]);
+     }
+     printf(" ");
+     print_info(i);
+     printf("\n");
+  }
+  printf("\n");
+
+  printf(ANSI_COLOR_RED     "This text is RED!"     ANSI_COLOR_RESET );
+  printf(ANSI_COLOR_GREEN   "This text is GREEN!"   ANSI_COLOR_RESET );
+  printf(ANSI_COLOR_YELLOW  "This text is YELLOW!"  ANSI_COLOR_RESET );
+  printf(ANSI_COLOR_BLUE    "This text is BLUE!"    ANSI_COLOR_RESET );
+  printf(ANSI_COLOR_MAGENTA "This text is MAGENTA!" ANSI_COLOR_RESET );
+  printf(ANSI_COLOR_CYAN    "This text is CYAN!"    ANSI_COLOR_RESET );
+}
+
+
+
+int main(int argc, char *argv[]) {
+  int p[20][20] = {0};
+  print_board(10, *p[][20]);
+  return 0;
+}
+
+
