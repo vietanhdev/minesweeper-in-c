@@ -3,4 +3,4 @@ Minesweeper Game written in C by VietAnhDev
 
 Screenshot:
 
-![screenshot.png]
+![Screenshot](screenshot.png)
