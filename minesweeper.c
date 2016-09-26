@@ -418,7 +418,7 @@ int pressed(int key){
   switch(key) {
   	case UP: if(!end_of_game)
   		{
-  			if (cs_row == 1) {
+  			if (cs_row == 0) {
   				cs_row = maxrow;
   			} else {
   				cs_row -= 1;
